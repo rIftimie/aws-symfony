@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+    background-color: rgb(115, 208, 239);
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 1rem;
+}
+nav ul li a {
+    padding: 1em;
+    transition: all 0.3s ease;
+}
+nav ul li a:hover {
+    background-color: rgb(175, 234, 253);
+}
+
+.logout {
+    font-weight: bold;
+}
+.logout:hover {
+    color: rgb(71, 71, 71);
+}
+
+.pokemon-sprite {
+    width: 100px;
+    height: 100px;
+}
+
+/* GENERAL */
+a {
+    text-decoration: none;
+    color: inherit;
+}

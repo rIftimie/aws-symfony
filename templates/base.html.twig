@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block navbar %}
+        {% if app.user %}
+        <header class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a class="logout" href="{{ path('app_logout') }}">Logout</a>
+        </header>
+        {% endif %}
+
+        <nav>
+            <ul>
+                {% if app.user %}
+                <li><a href={{"/profile"}}>Profile</a></li>
+                {% endif %}
+                <li><a href="/pokemon">All Pokemons</a></li>
+                <li><a href="/user">User Index</a></li>
+                {% if not app.user %}
+                <li><a href="/login">Login</a></li>
+                {% endif %}
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+        {% endblock %}
+        {% block body %}{% endblock %}
+    </body>
+</html>
